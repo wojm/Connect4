@@ -8,20 +8,20 @@ function Column() {
       <p class="dot"></p>
       <p class="dot"></p>
       <p class="dot"></p>
-      <p class="dot"></p>
-      <p class="dot"></p>
+      <p class="dot red"></p>
+      <p class="dot yellow"></p>
     </div>
   );
 }
 
 export default function App() {
-  const [playerTurn, changePlayerTurn] = useState('red');
+  const [playerTurn, changePlayerTurn] = useState("red");
 
   function togglePlayerTurn() {
-    if (playerTurn === 'yellow') {
-      changePlayerTurn('red');
+    if (playerTurn === "yellow") {
+      changePlayerTurn("red");
     } else {
-      changePlayerTurn('yellow');
+      changePlayerTurn("yellow");
     }
   }
   return (
@@ -29,12 +29,12 @@ export default function App() {
       <h1>Connect 4</h1>
       <div class="board">
         <Column></Column>
+        {/* <Column></Column>
         <Column></Column>
         <Column></Column>
         <Column></Column>
         <Column></Column>
-        <Column></Column>
-        <Column></Column>
+        <Column></Column> */}
       </div>
       <br />
       It is {playerTurn}s turn
