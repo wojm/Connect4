@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./styles.css";
 
 function Column() {
@@ -14,6 +15,15 @@ function Column() {
 }
 
 export default function App() {
+  const [playerTurn, changePlayerTurn] = useState('red');
+
+  function togglePlayerTurn() {
+    if (playerTurn === 'yellow') {
+      changePlayerTurn('red');
+    } else {
+      changePlayerTurn('yellow');
+    }
+  }
   return (
     <div className="App">
       <h1>Connect 4</h1>
@@ -27,16 +37,11 @@ export default function App() {
         <Column></Column>
       </div>
       <br />
-      It is yellows turn
-      <button> change player</button>
+      It is {playerTurn}s turn
+      <button onClick={togglePlayerTurn}> change player</button>
     </div>
   );
 }
-
-/**
- * Task 1 - show who's turn it is
- * have a button change whose turn it is
- */
 
 /**
  * Task 2 - add functionality for dropping a chip
