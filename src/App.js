@@ -9,7 +9,6 @@ function Dot(props) {
 function Column(props) {
   return (
     <div class="column">
-      <Column colors={[]}></Column>
       <Dot color={props.colors[5]}></Dot>
       <Dot color={props.colors[4]}></Dot>
       <Dot color={props.colors[3]}></Dot>
