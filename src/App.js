@@ -1,40 +1,48 @@
 import { useState } from "react";
 import "./styles.css";
 
-function Column() {
+function Dot(props) {
+  const className = "dot " + props.color;
+  return <p class={className}></p>;
+}
+
+function Column(props) {
   return (
     <div class="column">
-      <p class="dot"></p>
-      <p class="dot"></p>
-      <p class="dot"></p>
-      <p class="dot"></p>
-      <p class="dot"></p>
-      <p class="dot"></p>
+      <Dot color={props.colors[5]}></Dot>
+      <Dot color={props.colors[4]}></Dot>
+      <Dot color={props.colors[3]}></Dot>
+      <Dot color={props.colors[2]}></Dot>
+      <Dot color={props.colors[1]}></Dot>
+      <Dot color={props.colors[0]}></Dot>
     </div>
   );
 }
 
 export default function App() {
-  const [playerTurn, changePlayerTurn] = useState('red');
+  const [playerTurn, changePlayerTurn] = useState("red");
 
   function togglePlayerTurn() {
-    if (playerTurn === 'yellow') {
-      changePlayerTurn('red');
+    if (playerTurn === "yellow") {
+      changePlayerTurn("red");
     } else {
-      changePlayerTurn('yellow');
+      changePlayerTurn("yellow");
     }
   }
   return (
     <div className="App">
       <h1>Connect 4</h1>
       <div class="board">
-        <Column></Column>
-        <Column></Column>
-        <Column></Column>
-        <Column></Column>
-        <Column></Column>
-        <Column></Column>
-        <Column></Column>
+        <Column
+          colors={["red", "yellow", "yellow", "red", "yellow", "red"]}
+        ></Column>
+        <Column colors={["yellow", "red"]}></Column>
+        <Column colors={["red"]}></Column>
+        <Column colors={[]}></Column>
+        <Column colors={[]}></Column>
+        <Column colors={[]}></Column>
+        <Column colors={[]}></Column>
+        <Column colors={[]}></Column>
       </div>
       <br />
       It is {playerTurn}s turn
